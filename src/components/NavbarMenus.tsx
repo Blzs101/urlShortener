@@ -21,6 +21,7 @@ export default function NavbarMenus({ session }: { session: Session | null }) {
                         data-dropdown-toggle="user-dropdown"
                         data-dropdown-placement="bottom"
                         onClick={() => setProfileDropDown(!profileDropDown)}
+                        onBlur={() => setTimeout(() => setProfileDropDown(false), 100)}
                     >
                         <span className="sr-only">Open user menu</span>
                         <Image
@@ -52,22 +53,7 @@ export default function NavbarMenus({ session }: { session: Session | null }) {
                         </span>
                     </div>
                     <ul className="py-2" aria-labelledby="user-menu-button">
-                        <li>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 "
-                            >
-                                Dashboard
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="#"
-                                className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                            >
-                                Settings
-                            </a>
-                        </li>
+
                         <li className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" onClick={() => setProfileDropDown(false)}>
                             <DeleteAccount session={session?.user.id} />
                         </li>
