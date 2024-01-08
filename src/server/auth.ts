@@ -6,7 +6,6 @@ import {
 } from "next-auth";
 import GitHubProvider from "next-auth/providers/github";
 
-import { env } from "@/env";
 import { db } from "@/server/db";
 
 /**
