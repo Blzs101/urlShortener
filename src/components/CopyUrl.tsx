@@ -6,9 +6,9 @@ import type { FormEvent } from "react"
 export default function CopyUrl({ latestUrl }: { latestUrl: string }) {
 
     return (
-        <form className="w-3/4 " onSubmit={(e: FormEvent<HTMLFormElement>) => {
+        <form className="w-3/4 " onSubmit={async (e: FormEvent<HTMLFormElement>) => {
             e.preventDefault()
-            navigator.clipboard.writeText((e.target as HTMLFormElement).copyUrl.value)
+            await navigator.clipboard.writeText((e.target as HTMLFormElement).copyUrl.value)
         }}>
             <label htmlFor="copyUrl" className="mb-2 text-sm font-medium text-gray-900 sr-only ">Shorten Link</label>
             <div className="relative flex justify-center items-center">
