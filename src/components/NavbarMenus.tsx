@@ -1,5 +1,5 @@
 "use client"
-import { Session } from "next-auth";
+import type { Session } from "next-auth";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -28,9 +28,8 @@ export default function NavbarMenus({ session }: { session: Session | null }) {
                             className="rounded-full"
                             width={40}
                             height={40}
-                            src={session.user.image as string}
-                            alt="user photo"
-                        />
+                            src={session.user.image!}
+                            alt="user photo" />
                     </button>
                 ) : (
                     <Link href="/api/auth/signin" className="text-black mr-2">

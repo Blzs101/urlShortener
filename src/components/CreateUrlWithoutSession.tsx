@@ -10,8 +10,8 @@ export default function CreateUrlWithoutSession() {
 
     async function getShortenedUrl(e: React.FormEvent) {
         e.preventDefault();
-        const shortenedUrlApi = await shortenUrlAPi(typedUrl).then()
-        setShortenedUrl(shortenedUrlApi)
+        const shortenedUrlApi = await shortenUrlAPi(typedUrl)
+        setShortenedUrl(shortenedUrlApi!)
         setTypedUrl("")
     }
     return (
@@ -25,9 +25,9 @@ export default function CreateUrlWithoutSession() {
                     </div>
                 </form> :
                 <>
-                    <form className="w-3/4 " onSubmit={(e: React.FormEvent<Element>) => {
+                    <form className="w-3/4 " onSubmit={async (e: React.FormEvent<Element>) => {
                         e.preventDefault()
-                        navigator.clipboard.writeText((e.target as HTMLFormElement).copyUrl.value)
+                        await navigator.clipboard.writeText(shortenedUrl)
                     }}>
                         <label htmlFor="copyUrl" className="mb-2 text-sm font-medium text-gray-900 sr-only ">Shorten Link</label>
                         <div className="relative flex justify-center items-center">
