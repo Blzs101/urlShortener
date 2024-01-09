@@ -6,9 +6,9 @@ import { redirect } from "next/navigation";
 
 export async function createURLAction(formData: FormData) {
 
-  const urlName =( formData.get("getUrl") as string);
+  const urlName= formData.get("getUrl")?.toString();
   const postUrl = api.url;
-  const shortenedUrlName = await shortenUrlAPi(urlName);
+  const shortenedUrlName = await shortenUrlAPi(urlName!);
   
 
   await postUrl.createURL.mutate({ url: urlName!, shortenedURL: shortenedUrlName!});
