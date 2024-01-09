@@ -42,7 +42,8 @@ export const authOptions: NextAuthOptions = {
         ...session.user,
         id: user.id,
       },
-    })
+    }),
+    redirect: ({ baseUrl }) => baseUrl,
   },
   adapter: PrismaAdapter(db),
   providers: [
