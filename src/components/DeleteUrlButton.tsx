@@ -13,6 +13,6 @@ export default function DeleteUrlButton({ urlId }: { urlId: string }) {
     return (
         <button onClick={() => {
             deleteUrl.mutate({ id: urlId })
-        }} className="font-medium text-blue-600 dark:text-blue-500 hover:underline" disabled={deleteUrl.isLoading}>{deleteUrl.isLoading ? "Deleteting..." : "Delete"}</button>
+        }} className="font-medium text-blue-600 dark:text-blue-500 hover:underline" disabled={deleteUrl.isSuccess}>{deleteUrl.isSuccess ? "Deleting" : "Delete"}</button>
     )
 }
