@@ -6,11 +6,11 @@ import { redirect } from "next/navigation";
 
 export async function createURLAction(formData: FormData) {
 
-  const urlName = formData.get("getUrl") as string;
+  const urlName =( formData.get("getUrl") as string);
   const postUrl = api.url;
-  const shortenedUrlName = await shortenUrlAPi(urlName) as string;
+  const shortenedUrlName = await shortenUrlAPi(urlName);
   
 
-  await postUrl.createURL.mutate({ url: urlName, shortenedURL: shortenedUrlName});
+  await postUrl.createURL.mutate({ url: urlName!, shortenedURL: shortenedUrlName!});
   redirect("/success");
 }
