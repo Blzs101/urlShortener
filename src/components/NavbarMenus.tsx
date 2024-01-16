@@ -104,8 +104,9 @@ export default function NavbarMenus({ session }: { session: Session | null }) {
                         <li>
                             <Link
                                 href="/"
-                                className="md::text-blue-500 block rounded bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700"
+                                className="block rounded bg-blue-700 px-3 py-2 text-white md:bg-transparent md:p-0 md:text-blue-700"
                                 aria-current="page"
+                                onClick={() => setHamburgerDropDown(false)}
                             >
                                 Home
                             </Link>
@@ -114,32 +115,9 @@ export default function NavbarMenus({ session }: { session: Session | null }) {
                             <Link
                                 href="/links"
                                 className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
+                                onClick={() => setHamburgerDropDown(false)}
                             >
                                 Links
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="#"
-                                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-                            >
-                                Services
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="#"
-                                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-                            >
-                                Pricing
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="#"
-                                className="block rounded px-3 py-2 text-gray-900 hover:bg-gray-100 md:p-0 md:hover:bg-transparent md:hover:text-blue-700"
-                            >
-                                Contact
                             </Link>
                         </li>
                     </ul> : null}
