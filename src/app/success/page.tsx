@@ -12,7 +12,7 @@ export default async function Success() {
                 <CopyUrl latestUrl={latestUrl.shortenedURL} />
             </div>
             <div>
-                <Link href={"/"}>Shorten another link</Link>
+                <Link href={"/"} className="text-white end-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm p-2">Shorten another link</Link>
             </div>
         </main>
 
